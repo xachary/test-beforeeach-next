@@ -1,0 +1,14 @@
+{
+  "name": "without_nuxt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/spa-http-server/bin/http-server -p 7777 --push-state"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "spa-http-server": "^0.9.0"
+  }
+}

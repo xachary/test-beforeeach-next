@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <router-view></router-view>
+  <br><br>
+  <router-link to="/one">1. [beforeEach->next('/one')]<br>router-link: to="/one"</router-link>
+  <br><br>
+  <router-link to="/two">2. [beforeEach->next()]<br>router-link: to="/two"</router-link>
+  <br><br>
+  <a href="/one">3. [beforeEach->next('/one')]<br>just href or type in browser: /one</a>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+  const Index = {template: '<div>index</div>'}
+  const One = {template: '<div>one</div>'}
+  const Two = {template: '<div>two</div>'}
+
+  const routes = [
+    {
+      path: '/',
+      component: Index,
+      name: 'index'
+    },
+    {
+      path: '/one',
+      component: One,
+      name: 'one'
+    },
+    {
+      path: '/two',
+      component: Two,
+      name: 'two'
+    }
+  ]
+
+  const router = new VueRouter({
+    mode: 'history',
+    routes
+  })
+
+  router.beforeEach((to, from, next) => {
+    console.log(router)
+    console.log(to, from)
+
+    if (to.path === '/one') {
+      next('/')
+      // next('/two')
+    } else {
+      next()
+    }
+  })
+
+  var app = new Vue({
+    el: '#app',
+    data () {
+      return {}
+    },
+    mounted () {
+      var that = this
+
+    },
+    router
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "test-beforeeach-next",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "xachary <xachary@qq.com>",
+  "private": true,
+  "scripts": {
+    "dev-ssr": "nuxt -p 3001 -H 0.0.0.0",
+    "dev": "nuxt --spa -p 3001 -H 0.0.0.0",
+    "build-ssr": "nuxt build",
+    "build": "nuxt build --spa",
+    "start-ssr": "nuxt start -p 3002 -H 0.0.0.0",
+    "start": "nuxt start --spa -p 3002 -H 0.0.0.0",
+    "analyze": "nuxt build --analyze",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}
